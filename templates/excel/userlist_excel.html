@@ -1,0 +1,44 @@
+
+<body>
+	<div id="grid"></div>
+	<script>
+		var grid = new tui.Grid( {
+			el: document.getElementById('grid'),
+			columns: [
+				{
+					header: 'NO',
+					name: 'value'
+				},
+                {
+					header: 'ID',
+					name: 'name'
+				},
+				{
+					header: '명칭'
+				},
+                {
+					header: '등급'
+				},
+			]
+		} );
+
+		var arrData = [
+			{
+				name: '권태용',
+				value: '1'
+			},
+			{
+				name: '나우온',
+				value: '2'
+			},
+            {
+				name: '은하수산',
+				value: '3'
+			}
+		];
+
+		grid.resetData( arrData );
+
+	</script>
+</body>
+</html>

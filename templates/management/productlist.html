@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container px-3 py-3 bg-white">
+        Home / 설정 / 상품명관리
+    </div>
+
+    <div class="container px-3">
+        <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3>상품명 관리</h3>
+            </div>
+        </div>
+
+        <form class="row py-3 border bg-white" type="post">
+
+            <div class="col-auto" style="margin-bottom: 20px;">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <input class="form-control" type="text" id="kw" name="kw" placeholder="상품명 검색">
+                    </li>
+                    <li class="mx-1 nav-item btn btn-secondary">
+                        검색
+                    </li>
+                    <li class="mx-1 nav-item btn btn-secondary" data-bs-target="#layerpop_product"
+                        data-bs-toggle="modal">
+                        <i class="bi bi-person-plus"></i>
+                        업로드
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style="margin: auto;">
+                <table>
+                    <thead>
+                    <tr style="text-align: center; font-size: small">
+                        <th scope="col">NO</th>
+                        <th scope="col">쇼핑몰</th>
+                        <th scope="col">상품명</th>
+                        <th scope="col">품목</th>
+                        <th scope="col" style="width: 60px;">수량</th>
+                        <th scope="col">구성품</th>
+                        <th scope="col">행사</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="text-align: center">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="text" class="form-control itemName" maxlength="200"></td>
+                        <td><input type="text" class="form-control itemCnt" style="text-align:center;" maxlength="200">
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-light setComponentBtn"><i class="far fa-square"></i></button>
+                        </td>
+                        <td style="width: 50px;">
+                            <li class="btn btn-light registerEventBtn" data-bs-target="#layerpop_plus" data-bs-toggle="modal">
+                                <i class="fas fa-plus"></i>
+                            </li>
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-danger deleteBtn"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <div class="row"></div>
+
+    <!-- 모달 부분 -->
+    <div class="modal fade" id="layerpop_product">
+        <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <!-- header title -->
+                    <h4 class="modal-title">상품명 데이터 업로드</h4>
+                </div>
+                <section>
+                    <table class="table table-bordered" id="memberTable">
+                        <colgroup>
+                            <col style="width:200px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>엑셀 파일</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <td colspan="2">
+                            ※ 샘플 다운로드 :
+                            <button type="button" class="btn btn-secondary mx-1">샘플 다운로드</button>
+                            <br>
+                            ※ 쇼핑몰명이 정확히 매칭되지 않으면 해당 열은 저장되지 않습니다.<br>
+                            ※ 전화번호 란은 "-" 를 넣어 주세요.
+                        </td>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="modal-body">
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">업로드</button>
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 부분 끝 -->
+
+    <!-- 모달 부분 -->
+    <div class="modal fade" id="layerpop_plus">
+        <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <!-- header title -->
+                    <h4 class="modal-title">행사 설정</h4>
+                </div>
+                <section>
+                    <table class="table table-bordered" id="memberTable">
+                        <colgroup>
+                            <col style="width:200px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>행사 시간</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input class="form-control" type="date">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>행사 품목명</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>행사 증정</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기본 품목명</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기본 증정</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="modal-body">
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">행사 설정</button>
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 부분 끝 -->
+
+{% endblock %}
+
+{% block script %}
+
+    <script type='text/javascript'>
+
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container px-3 py-3 bg-white">
+        Home / 관리 / 설정 / 휴무일관리
+</div>
+<div class="container px-3">
+    <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3 style="font-size: 30px;">휴무일 관리</h3>
+            </div>
+    </div>
+
+    <div class="row">
+        <section>
+  <table class="demo01">
+    <tr>
+      <th>요일별 지정</th>
+      <td>
+          일<input type="checkbox">
+          월<input type="checkbox">
+          화<input type="checkbox">
+          수<input type="checkbox">
+          목<input type="checkbox">
+          금<input type="checkbox">
+          토<input type="checkbox">
+      </td>
+    </tr>
+  </table>
+            <p style="font-size: small"> * 체크한 요일에는 작업지시서가 생성되지 않습니다.</p>
+        </section>
+    </div>
+
+    <div>
+        <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">크게</button>
+        <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">작게</button>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div style="width:200px; height:150px; float:left; margin-right: 40px;">
+            <label style="font-weight: bold; font-size: 15px;">날짜별 지정/매년 반복</label><br>
+            <textarea class="form-control col-sm-5" rows="10"></textarea>
+            <p style="font-size: 13px;">
+        * 매년 반복에 입력시 "월/일" 로만 입력하여 주세요.<br>
+        * 한 줄에 하루씩만 입력하여 주세요. <br>
+        * 매년 해당일에는 작업지시서가 생성되지 않습니다
+            </p>
+        </div>
+        <div style="width:200px; height:150px; float:left;">
+            <label style="font-weight: bold; font-size: 15px;">날짜별 지정/특정일 지정</label><br>
+            <textarea class="form-control col-sm-5" rows="10"></textarea>
+            <p style="font-size: 13px;">
+        * 특정일 지정에 입력시 "년/월/일"로만 입력하여 주세요. <br>
+        * 한 줄에 하루씩만 입력하여 주세요. <br>
+        * 입력한 특정일에는 작업지시서가 생성되지 않습니다.
+            </p>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+
+<script type='text/javascript'>
+
+</script>
+
+{% endblock %}
+

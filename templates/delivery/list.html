@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container px-3 py-3 bg-white">
+        Home / 주문 / 출고리스트
+</div>
+
+
+<div class="container px-3">
+    <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3 style="font-size: 30px;">출고리스트</h3>
+            </div>
+    </div>
+
+    <form class="row py-3 border bg-white" type="post" style="height: 200px;">
+     <div class="row" id="here">
+         {% include 'excel/list_excel.html' %}
+     </div>
+    </form>
+
+    <form class="row py-3 border bg-white" type="post" style="margin-top: 60px;">
+{#    <div class="row" id="here">{% include 'excel/userlist_excel.html' %}</div>#}
+    </form>
+
+</div>
+
+<!-- ajax 텍스트형 목록형 시간대별 불러오기 url수정 필요 -->
+{#<script>#}
+{#  $(document).ready(function(){#}
+{#  $("#menu1").on("click",function(){#}
+{#    $.ajax({#}
+{#        url : "{% url 'common:orderlistLTO' %}",#}
+{#        dataType: "html",#}
+{#        type: "GET",#}
+{#        success: function(data) {#}
+{#          $('#here').html(data);#}
+{#        },#}
+{#        error: function (){alert("실패");}#}
+{#    });#}
+{#  });#}
+{#});#}
+{##}
+{#$(document).ready(function(){#}
+{#  $("#menu2").on("click",function(){#}
+{#    $.ajax({#}
+{#        url : "{% url 'common:categorylist' %}",#}
+{#        dataType: "html",#}
+{#        type: "GET",#}
+{#        success: function(data) {#}
+{#          $('#here').html(data);#}
+{#        },#}
+{#        error: function (){alert("실패");}#}
+{#    });#}
+{#  });#}
+{#});#}
+{##}
+{#$(document).ready(function(){#}
+{#  $("#menu3").on("click",function(){#}
+{#    $.ajax({#}
+{#        url : "{% url 'common:shoplist' %}",#}
+{#        dataType: "html",#}
+{#        type: "GET",#}
+{#        success: function(data) {#}
+{#          $('#here').html(data);#}
+{#        },#}
+{#        error: function (){alert("실패");}#}
+{#    });#}
+{#  });#}
+{#});#}
+{#</script>#}
+
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+

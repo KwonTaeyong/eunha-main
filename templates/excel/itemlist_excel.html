@@ -1,0 +1,62 @@
+
+<body>
+	<div id="grid"></div>
+	<script>
+		var grid = new tui.Grid( {
+			el: document.getElementById('grid'),
+			columns: [
+				{
+					header: 'NO',
+					name: 'value'
+				},
+                {
+					header: '품목',
+					name: 'name'
+				},
+				{
+					header: '구성품'
+				},
+                {
+					header: '증정'
+				},
+                {
+					header: '카테고리'
+				},
+                {
+					header: '포장'
+				},
+                {
+					header: '생산공장'
+				},
+                {
+					header: '출하공장'
+				},
+                {
+					header: '합포장불가'
+				},
+                {
+					header: '삭제'
+				},
+			]
+		} );
+
+		var arrData = [
+			{
+				name: '권태용',
+				value: '1'
+			},
+			{
+				name: '나우온',
+				value: '2'
+			},
+            {
+				name: '은하수산',
+				value: '3'
+			}
+		];
+
+		grid.resetData( arrData );
+
+	</script>
+</body>
+</html>

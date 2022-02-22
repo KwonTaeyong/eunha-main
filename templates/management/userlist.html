@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block css %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- 모달 부분 -->
+    <div class="modal fade" id="layerpop">
+        <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <!-- header title -->
+                    <h4 class="modal-title">계정 추가</h4>
+                </div>
+                <section>
+                    <table class="table table-bordered" id="memberTable">
+                        <colgroup>
+                            <col style="width:200px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>아이디</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" name="" id="memberId" value="" size="40"
+                                           maxlength="100" placeholder="아이디를 입력 해 주세요. (4자 이상)"
+                                           style="margin-right:10px;">
+                                    <button type="button" class="btn btn-secondary mx-1" id="checkMemberId"
+                                            style="float: right">중복확인
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="writeTr">
+                            <th>비밀번호</th>
+                            <td>
+                                <input type="password" class="form-control" name="" id="memberPw" value=""
+                                       size="40">
+                            </td>
+                        </tr>
+                        <tr class="writeTr">
+                            <th>비밀번호 확인</th>
+                            <td>
+                                <input type="password" class="form-control" name="" id="memberPw2" value=""
+                                       size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>명칭</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberName" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>등급</th>
+                            <td>
+                                <select class="form-control" style="width:150px;" id="memberLevel">
+                                    <option value="8">생산공장</option>
+                                    <option value="6">임원</option>
+                                    <option value="4">운영자</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="modal-body">
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">추가</button>
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 부분 끝 -->
+
+
+    <div class="container px-3 py-3 bg-white">
+        Home / 설정 / 계정관리
+    </div>
+
+    <div class="container px-3">
+        <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3>계정관리</h3>
+
+            </div>
+
+        </div>
+
+        <form class="row py-3 border bg-white" type="post">
+            <div class="col">
+                <div class="fs-5">유저 목록 :</div>
+            </div>
+            <div class="col-auto" style="margin-bottom: 30px;">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <label for="kw" class="visually-hidden">계정명 검색</label>
+                        <input class="form-control" type="text" id="kw" name="kw" placeholder="계정명 검색">
+                    </li>
+                    <li class="mx-2 nav-item btn btn-secondary">
+                        검색
+                    </li>
+                    <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop" data-bs-toggle="modal">
+                        <i class="bi bi-person-plus"></i>
+                        계정추가
+                    </li>
+                </ul>
+            </div>
+             <div class="row" style="margin: auto;">
+            <table>
+                <thead>
+                <tr style="text-align: center; font-size: small">
+                    <th scope="col">NO</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">명칭</th>
+                    <th scope="col">등급</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style="text-align: center">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </form>
+    </div>
+
+    <div class="row"></div>
+
+
+
+
+{% endblock %}
+
+{% block script %}
+    <script type='text/javascript'>
+
+
+    </script>
+{% endblock %}
+

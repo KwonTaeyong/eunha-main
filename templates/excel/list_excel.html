@@ -1,0 +1,64 @@
+<style>
+    {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*====================*/
+section {max-width:960px; margin:30px auto; padding:30px;}
+table {
+  width: 100%;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+th {
+  background: #f4f4f4;
+}
+.demo01 th {
+  width: 30%;
+  text-align: center;
+}
+
+@media only screen and (max-width:768px) {
+.demo01 {
+  margin: 0 -10px;
+}
+.demo01 th,  .demo01 td {
+  width: 100%;
+  display: block;
+  border-top: none;
+}
+.demo01 tr:first-child th {
+  border-top: 1px solid #ddd;
+}
+}
+</style>
+
+<section>
+  <table class="demo01">
+    <tr>
+      <th style="font-weight: normal">주문기간</th>
+      <td>
+        <input type="date"> ~ <input type="date">
+        <select style="height: 28px; width: 150px;"><option>공장별보기</option></select>
+      </td>
+    </tr>
+    <tr>
+      <th style="font-weight: normal">보기형식</th>
+      <td>
+        <button class="btn btn-secondary mx-1" type="button" id="menu1">텍스트형</button>
+        <button class="btn btn-secondary mx-1" type="button" id="menu2">목록형</button>
+        <button class="btn btn-secondary mx-1" type="button" id="menu3">시간대별</button>
+      </td>
+    </tr>
+  </table>
+</section>

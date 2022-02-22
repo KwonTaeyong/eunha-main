@@ -1,0 +1,87 @@
+
+<body>
+	<div id="grid"></div>
+	<script>
+		var grid = new tui.Grid( {
+			el: document.getElementById('grid'),
+            data: arrData,
+            scrollX: false,
+            scrollY: false,
+			columns: [
+				{
+					header: 'NO',
+					name: 'value',
+                    filter: 'number',
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '주문일시',
+					name: 'name',
+                     filter: {
+                         type: 'date',
+                         options: {
+                             format: 'yyyy-MM-dd'
+                         }
+                     },
+                     sortable: true,
+                     rowSpan: true
+				},
+				{
+					header: '쇼핑몰명',
+                    filter: {
+                    type: 'text'},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '주문자',
+                    filter: {
+                    type: 'text',},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '수취인',
+                    filter: {
+                    type: 'text',},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '연락처',
+                    filter: 'number',
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '상품명',
+                    filter: {
+                    type: 'text',},
+                    sortable: true,
+                    rowSpan: true
+				},
+			],
+            draggable: true
+		} );
+
+		var arrData = [
+			{
+				name: '권태용',
+				value: '1'
+			},
+			{
+				name: '나우온',
+				value: '2'
+			},
+            {
+				name: '은하수산',
+				value: '3'
+			}
+		];
+
+		grid.resetData( arrData );
+
+	</script>
+</body>
+</html>

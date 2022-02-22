@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container px-3 py-3 bg-white">
+        Home / 통계 / 매체별 일별 매출
+</div>
+
+<div class="container px-3">
+    <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3 style="font-size: 30px;">매체별 일별 매출</h3>
+            </div>
+    </div>
+    <div class="row">
+        <section>
+            <table class="demo01">
+                <tr>
+                    <th style="font-weight: normal">일자</th>
+                    <td>
+                        <input type="date">
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <form class="row py-3 border bg-white" type="post">
+    <div class="row">
+        <div class="box-zoom">
+            <button class="btn btn-secondary mx-1" onclick="copyToClipboard('#demo')">복사</button>
+            <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">크게</button>
+            <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">작게</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="speech" style="margin-top: 30px; font-size: 26px;">
+            <p id="demo">
+                쇼핑몰명 결제금액<br>
+                11번가 : 2,813,285<br>
+                스마트스토어 : 5,048,170<br>
+                신세계몰(신) : 534,200<br>
+                옥션 : 815,615<br>
+                위메프(신) : 568,700<br>
+                지마켓 : 996,300<br>
+                카카오선물하기 : 1,287,000<br>
+                카카오톡스토어 : 117,700<br>
+                쿠팡 : 1,086,740<br>
+                피쉬세일 : 19,800<br>
+                하프클럽(신) : 26,800<br>
+                총합계 : 13,314,310
+            </p>
+        </div>
+    </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+
+{% endblock %}
+

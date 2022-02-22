@@ -1,0 +1,144 @@
+
+<body>
+    <div id="grid"></div>
+	<script>
+		var grid = new tui.Grid( {
+			el: document.getElementById('grid'),
+            data: arrData,
+            scrollX: false,
+            scrollY: false,
+			columns: [
+				{
+					header: 'NO',
+					name: 'value',
+                    filter: 'number',
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '주문일시',
+                    name: 'date',
+                    filter: {
+                         type: 'date',
+                         options: {
+                             format: 'yyyy-MM-dd'
+                         }
+                     },
+                    sortable: true,
+                    rowSpan: true
+				},
+				{
+					header: '쇼핑몰명',
+                    name: 'shop',
+                    filter: {
+                    type: 'text'},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '주문자',
+                    name: 'name',
+                    filter: {
+                    type: 'text'},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '수취인',
+                    name: 'name',
+                    filter: {
+                    type: 'text'},
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '연락처',
+                    name: 'number',
+                    filter: 'number',
+                    sortable: true,
+                    rowSpan: true
+				},
+                {
+					header: '상품명',
+                    name: 'product',
+                    filter: {
+                    type: 'text'},
+                    sortable: true,
+                    rowSpan: true
+				},
+			],
+            draggable: true
+		} );
+
+		var arrData = [
+			{
+				name: '권태용',
+				value: '1',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '코스트코',
+                product: '블라인드',
+			},
+			{
+				name: '나우온',
+				value: '2',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '롯데',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+            {
+				name: '은하수산',
+				value: '3',
+                number: '010-111-1111',
+                date: '2022-01-25',
+                shop: '쿠팡',
+                product: '블라인드',
+			},
+		];
+
+		grid.resetData( arrData );
+
+	</script>
+</body>
+</html>

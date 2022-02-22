@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container px-3 py-3 bg-white">
+        Home / 관리 / 설정 / 목표 관리
+</div>
+
+<div class="container px-3">
+    <div class="row text-center border bg-white my-3 py-3">
+            <div class="col">
+                <h3 style="font-size: 30px;">목표 관리</h3>
+            </div>
+    </div>
+    <div class="row">{% include 'excel/objectives_excel.html' %}</div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block script %}
+
+<script type='text/javascript'>
+
+</script>
+
+{% endblock %}
+
