@@ -17,10 +17,14 @@
     <form class="row py-3 border bg-white" type="post">
         <div style="height: 50px;">
             <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_product" data-bs-toggle="modal" style="float:right;">
+                <i class="fa-solid fa-file-excel"></i>
                 엑셀</li>
             <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_order" data-bs-toggle="modal" style="float:right;">
+                <i class="fa-solid fa-file-arrow-up"></i>
                 업로드</li>
-            <button class="btn btn-secondary mx-1" style="float: right;">저장</button>
+            <button class="btn btn-secondary mx-1" style="float: right;">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                저장</button>
         </div>
     <div class="row">{% include 'excel/orderlist_excel.html' %}</div>
     </form>

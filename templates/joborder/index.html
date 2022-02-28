@@ -18,13 +18,15 @@
         <section>
   <table class="demo01">
     <tr>
-      <th style="font-weight: normal">출고기간</th>
+      <th style="font-weight: normal; text-align: center">출고기간</th>
       <td>
         <input type="date">
         <select>
             <option>1차확정</option>
         </select>
-        <button class="btn btn-secondary mx-1" type="submit" style="float: right">조회하기</button>
+        <button class="btn btn-secondary mx-1" type="submit" style="float: right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            조회하기</button>
       </td>
     </tr>
   </table>
@@ -34,10 +36,18 @@
     <form class="row py-3 border bg-white" type="post">
     <div class="row" style="height: 50px;">
         <div>
-            <button class="btn btn-secondary mx-1" type="submit">작업지시서 파일 다운로드</button>
-            <button class="btn btn-secondary mx-1" type="submit">송장용 파일 다운로드</button>
-            <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">크게</button>
-            <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">작게</button>
+            <button class="btn btn-secondary mx-1" type="submit">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                작업지시서 파일 다운로드</button>
+            <button class="btn btn-secondary mx-1" type="submit">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                송장용 파일 다운로드</button>
+            <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">
+                <i class="fa-solid fa-arrow-up"></i>
+                크게</button>
+            <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">
+                <i class="fa-solid fa-arrow-down"></i>
+                작게</button>
         </div>
     </div>
     </form>

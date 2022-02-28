@@ -17,13 +17,19 @@
          <section>
   <table class="demo01">
     <tr>
-      <th style="font-weight: normal">주문기간</th>
+      <th style="font-weight: normal; text-align: center">주문기간</th>
       <td>
         <input type="date"> ~ <input type="date">
           <div style="float: right">
-          <button class="btn btn-secondary mx-1" onclick="copyToClipboard('#demo')">복사</button>
-          <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">크게</button>
-          <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">작게</button>
+          <button class="btn btn-secondary mx-1" onclick="copyToClipboard('#demo')">
+              <i class="fa-regular fa-copyright"></i>
+              복사</button>
+          <button class="btn btn-secondary mx-1" type="button" onclick="changeFont();">
+              <i class="fa-solid fa-arrow-up"></i>
+              크게</button>
+          <button class="btn btn-secondary mx-1" type="button" onclick="downFont();">
+              <i class="fa-solid fa-arrow-down"></i>
+              작게</button>
           </div>
       </td>
     </tr>

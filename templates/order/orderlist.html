@@ -1,251 +1,262 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
-<div class="container px-3 py-3 bg-white">
+    <div class="container px-3 py-3 bg-white">
         Home / 주문 / 주문리스트
-</div>
+    </div>
 
-<div class="container px-3">
-    <div class="row text-center border bg-white my-3 py-3">
+    <div class="container px-3">
+        <div class="row text-center border bg-white my-3 py-3">
             <div class="col">
                 <h3 style="font-size: 30px;">주문리스트</h3>
             </div>
-    </div>
-
-     <div class="row">{% include 'excel/orderlist_table.html' %}</div>
-    <form class="row py-3 border bg-white" type="post">
-        <div style="height: 50px;">
-             <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_product" data-bs-toggle="modal" style="float:right;">
-                 엑셀</li>
-            <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_order" data-bs-toggle="modal" style="float:right;">
-                업로드</li>
-            <button class="btn btn-secondary mx-1" style="float: right;">저장</button>
         </div>
-    <div class="row">{% include 'excel/orderlist_excel.html' %}</div>
-    </form>
 
-    <form class="row py-3 border bg-white" type="post" style="margin-top: 60px;">
-    <div class="row" style="height: 200px;">{% include 'excel/process_excel.html' %}</div>
-    <p style="font-size: small">
-        "배송일 지정하기"는 "주문 수집"인 상태의 주문 건에만 적용됩니다.<br>
-        "재출고 처리"는 "작업 지시서"인 상태의 주문 건에만 적용됩니다.
-    </p>
-    </form>
-</div>
+        <div class="row">{% include 'excel/orderlist_table.html' %}</div>
+        <form class="row py-3 border bg-white" type="post">
+            <div style="height: 50px;">
+                <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_product" data-bs-toggle="modal"
+                    style="float:right;">
+                    <i class="fa-solid fa-file-excel"></i>
+                    엑셀
+                </li>
+                <li class="mx-2 nav-item btn btn-secondary" data-bs-target="#layerpop_order" data-bs-toggle="modal"
+                    style="float:right;">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    업로드
+                </li>
+                <button class="btn btn-secondary mx-1" style="float: right;">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    저장</button>
+            </div>
+            <div class="row">{% include 'excel/orderlist_excel.html' %}</div>
+        </form>
 
-<!-- 엑셀 모달 부분 -->
-<div class="modal fade" id="layerpop_product" >
-  <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
-    <div class="modal-content">
-      <!-- header -->
-      <div class="modal-header">
-        <!-- header title -->
-        <h4 class="modal-title">주문 데이터 등록</h4>
-      </div>
-      <section>
-          <table class="table" id="memberTable">
-              <colgroup>
-                  <col style="width:200px;">
-              </colgroup>
-              <tbody>
-              <tr>
-                  <th>엑셀 파일</th>
-                  <td>
-                      <div class="form-inline">
-                          <input type="text" class="form-control" value="" size="40" maxlength="100" placeholder="" style="margin-right:10px;">
-                      </div>
-                  </td>
-              </tr>
-              <td colspan="2">
-					※ 샘플 다운로드 : <button type="button" class="btn btn-secondary mx-1">샘플 다운로드</button> <br>
-					※ 쇼핑몰명이 정확히 매칭되지 않으면 해당 열은 저장되지 않습니다.<br>
-										※ 전화번호 란은 "-" 를 넣어 주세요.
-				</td>
-              </tbody>
-          </table>
-      </section>
-      <div class="modal-body">
-      </div>
-      <!-- Footer -->
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">업로드</button>
-          <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
-      </div>
+        <form class="row py-3 border bg-white" type="post" style="margin-top: 60px;">
+            <div class="row" style="height: 200px;">{% include 'excel/process_excel.html' %}</div>
+            <p style="font-size: small">
+                "배송일 지정하기"는 "주문 수집"인 상태의 주문 건에만 적용됩니다.<br>
+                "재출고 처리"는 "작업 지시서"인 상태의 주문 건에만 적용됩니다.
+            </p>
+        </form>
     </div>
-  </div>
-</div>
-<!-- 엑셀 모달 끝 -->
 
-<!-- 등록 모달 -->
-<div class="modal fade" id="layerpop_order" >
-  <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
-    <div class="modal-content">
-      <!-- header -->
-      <div class="modal-header">
-        <!-- header title -->
-        <h4 class="modal-title">주문 등록</h4>
-      </div>
-      <section>
-          <table class="table" id="memberTable">
-              <colgroup>
-                  <col style="width:200px;">
-              </colgroup>
-              <td colspan="2" class="subtitle" style="font-weight: bolder">주문자 정보</td>
-              <tbody>
-                  <th>주문 시간</th>
-                  <td>
-                      <div class="form-inline">
-                          <input class="form-control" type="date">
-                      </div>
-                  </td>
-              </tr>
-              <tr class="writeTr">
-                  <th>쇼핑몰명</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr class="writeTr">
-                  <th>주문자명</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr class="writeTr">
-                  <th>주문자 연락처</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>수취인</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>수취인 연락처</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>주소</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>배송구분</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>배송비</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>배송메세지</th>
-                  <td>
-                      <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
-                  </td>
-              </tr>
-              <tr>
-                  <th>배송일 지정</th>
-                  <td>
-                      <input type="date" class="form-control">
-                  </td>
-              </tr>
-              </tbody>
-              <td colspan="2" class="subtitle" style="font-weight: bolder">상품 정보</td>
-              <tbody>
-              <tr>
-                  <th>상품명</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>수량</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>주문금액</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              </tbody>
-              <td colspan="2" class="subtitle" style="font-weight: bolder">배송 정보</td>
-              <tbody>
-              <tr>
-                  <th>택배사</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>운송장 번호</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              </tbody>
-              <td colspan="2" class="subtitle" style="font-weight: bolder">운영자 기입란</td>
-              <tbody>
-              <tr>
-                  <th>사방넷 주문번호</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>쇼핑몰 주문번호</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>쇼핑몰 상품코드</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              <tr>
-                  <th>메모</th>
-                  <td>
-                      <input type="text" class="form-control">
-                  </td>
-              </tr>
-              </tbody>
-          </table>
-      </section>
-      <div class="modal-body">
-      </div>
-      <!-- Footer -->
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">주문정보 등록</button>
-          <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
-      </div>
+    <!-- 엑셀 모달 부분 -->
+    <div class="modal fade" id="layerpop_product">
+        <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <!-- header title -->
+                    <h4 class="modal-title">주문 데이터 등록</h4>
+                </div>
+                <section>
+                    <table class="table" id="memberTable">
+                        <colgroup>
+                            <col style="width:200px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>엑셀 파일</th>
+                            <td>
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" value="" size="40" maxlength="100"
+                                           placeholder="" style="margin-right:10px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <td colspan="2">
+                            ※ 샘플 다운로드 :
+                            <button type="button" class="btn btn-secondary mx-1">샘플 다운로드</button>
+                            <br>
+                            ※ 쇼핑몰명이 정확히 매칭되지 않으면 해당 열은 저장되지 않습니다.<br>
+                            ※ 전화번호 란은 "-" 를 넣어 주세요.
+                        </td>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="modal-body">
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">업로드</button>
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- 등록 모달 끝 -->
+    <!-- 엑셀 모달 끝 -->
+
+    <!-- 등록 모달 -->
+    <div class="modal fade" id="layerpop_order">
+        <div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <!-- header title -->
+                    <h4 class="modal-title">주문 등록</h4>
+                </div>
+                <section>
+                    <table class="table" id="memberTable">
+                        <colgroup>
+                            <col style="width:200px;">
+                        </colgroup>
+                        <td colspan="2" class="subtitle" style="font-weight: bolder">주문자 정보</td>
+                        <tbody>
+                        <th>주문 시간</th>
+                        <td>
+                            <div class="form-inline">
+                                <input class="form-control" type="date">
+                            </div>
+                        </td>
+                        </tr>
+                        <tr class="writeTr">
+                            <th>쇼핑몰명</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr class="writeTr">
+                            <th>주문자명</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr class="writeTr">
+                            <th>주문자 연락처</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수취인</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수취인 연락처</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>배송구분</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>배송비</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>배송메세지</th>
+                            <td>
+                                <input type="text" class="form-control" name="" id="memberPw" value="" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>배송일 지정</th>
+                            <td>
+                                <input type="date" class="form-control">
+                            </td>
+                        </tr>
+                        </tbody>
+                        <td colspan="2" class="subtitle" style="font-weight: bolder">상품 정보</td>
+                        <tbody>
+                        <tr>
+                            <th>상품명</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수량</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주문금액</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        </tbody>
+                        <td colspan="2" class="subtitle" style="font-weight: bolder">배송 정보</td>
+                        <tbody>
+                        <tr>
+                            <th>택배사</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>운송장 번호</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        </tbody>
+                        <td colspan="2" class="subtitle" style="font-weight: bolder">운영자 기입란</td>
+                        <tbody>
+                        <tr>
+                            <th>사방넷 주문번호</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>쇼핑몰 주문번호</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>쇼핑몰 상품코드</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>메모</th>
+                            <td>
+                                <input type="text" class="form-control">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="modal-body">
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">주문정보 등록</button>
+                    <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 등록 모달 끝 -->
 
 
 {% endblock %}
 
 {% block script %}
-<script type='text/javascript'>
+    <script type='text/javascript'>
 
 
-
-</script>
+    </script>
 {% endblock %}
 

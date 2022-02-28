@@ -1,23 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from .views import main, order, delivery, Estatistics, joborder, management
-from .views import yj_test
+from .views import order, delivery, Estatistics, joborder, management
+
 
 app_name = 'common'
 
 urlpatterns = [
-    ## test view
-    path('test/', yj_test.test, name='test'),
-    path('testajax/', yj_test.testView.as_view(), name='testajax'),
-
     ##  views.main
-    path('', main.index, name='index'), # dashboard / 시작 페이지 index
+    # path('', main.index, name='index'), # dashboard / 시작 페이지 index
     path('login/', auth_views.LoginView.as_view(template_name='main/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     ## views.order 주문
-    path('order/orderlist', order.orderlist, name='orderlist' ), # 주문 리스트
+    path('', order.orderlist, name='orderlist'), # 주문 리스트
     path('order/orderlist/LTO/', order.orderlistLTO, name='orderlistLTO'), # 주문리스트 -롯데온
     path('order/orderlist/nc/', order.orderlistnc, name='orderlistnc'), # 체크 필요
 

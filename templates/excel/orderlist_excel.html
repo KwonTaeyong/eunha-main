@@ -13,7 +13,7 @@
 					name: 'value',
                     filter: 'number',
                     sortable: true,
-                    rowSpan: true
+                    rowSpan: true,
 				},
                 {
 					header: '주문일시',
@@ -29,6 +29,7 @@
 				},
 				{
 					header: '쇼핑몰명',
+                    name: 'shop',
                     filter: {
                     type: 'text'},
                     sortable: true,
@@ -68,15 +69,18 @@
 		var arrData = [
 			{
 				name: '권태용',
-				value: '1'
+				value: '1',
+                shop : '코스트코'
 			},
 			{
 				name: '나우온',
-				value: '2'
+				value: '2',
+                shop: '롯데'
 			},
             {
 				name: '은하수산',
-				value: '3'
+				value: '3',
+                shop: '쿠팡'
 			}
 		];
 
